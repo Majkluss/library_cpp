@@ -1,10 +1,14 @@
 ﻿#include <iostream>
 #include <algorithm>
 #include <string>
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <math.h>
+
 using namespace std;
 
-	// Načtení jména a pozdravení + pole
-	/*int main()
+// Načtení jména a pozdravení + pole
+/*int main()
 	{
 		string jmeno;
 		string odpoved;
@@ -56,8 +60,8 @@ using namespace std;
 
 	}*/
 
-	// Načtení jména a převedení jednotlivých znaků do ASCII hodnoty
-	/*int main()
+// Načtení jména a převedení jednotlivých znaků do ASCII hodnoty
+/*int main()
 	{
 		string jmeno;
 		char c;
@@ -75,8 +79,8 @@ using namespace std;
 		}
 	}*/
 
-	// Posunutí písmen v řetězci o 1 v abecedě
-	/*int main()
+// Posunutí písmen v řetězci o 1 v abecedě
+/*int main()
 	{
 		string s = "ahojjaksemas";
 		for (int i = 0; i < s.length(); i++)
@@ -84,12 +88,13 @@ using namespace std;
 			s[i] += 1;
 		}
 		cout << s;
-	}*/
+}*/
 
-	// Vícerozměrné pole
-int main()
+// Vícerozměrné pole
+/*int main()
 {
 	int kinosal[5][5];
+	// int kinosal3D [5][5][5];
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
@@ -97,4 +102,37 @@ int main()
 			kinosal[i][j] = 0;
 		}
 	}
+	kinosal[2][2] = 1;
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			cout << kinosal[j][i];
+		}
+		cout << endl;
+	}
+}*/
+
+// Matematické funkce
+int main()
+{
+	double d = 2.72;
+	int a = (int)round(d);
+	cout << d << endl;
+	cout << a << endl;
+
+	double vysledek = pow(2, 15);
+	cout << vysledek << endl;
+
+	double x = 30;
+	double stupne = sin(x * (M_PI / 180));
+	double radiany = sin(x);
+	cout << "Sinus: " << x << endl;
+	cout << "Stupne: " << stupne << endl;
+	cout << "Radiany: " << radiany << endl;
+
+	int modulo = 5 % 2;
+	cout << modulo << endl;
+
 }
