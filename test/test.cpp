@@ -115,7 +115,7 @@ using namespace std;
 }*/
 
 // Matematické funkce
-int main()
+/*int main()
 {
 	double d = 2.72;
 	int a = (int)round(d);
@@ -135,4 +135,41 @@ int main()
 	int modulo = 5 % 2;
 	cout << modulo << endl;
 
+}*/
+
+// Ukazatele
+/*int main()
+{
+	int a = 52;
+	int *ukazatel = &a;
+	cout << "Adresa: " << &a << endl;
+	cout << "Ukazatel: " << ukazatel << endl;
+	cout << "Na jakou hodnotu ukazuje: " << *ukazatel << endl;
+	*ukazatel = 15;
+	cout << "A nyni: " << *ukazatel << endl;
+	cout << "A kontrola adresy: " << ukazatel << endl;
+}*/
+
+// Alokace paměti - ukazatel a reference
+int main()
+{
+	// Vytvoří se ukazatel ve stacku (zásobník), který odkazuje na adresu např. 500 v heap (halda)
+	int *p = new int;
+	cout << "Adresa: " << p << ", Hodnota: " << *p << endl;
+
+	// V heap se k adrese 500 přiřadí hodnota 5
+	*p = 5;
+	cout << "Adresa: " << p << ", Hodnota: " << *p << endl;
+
+	// Změníme odkaz pointeru na novou proměnnou v heapu pomocí p = new int(10);, která má nyní adresu např. 700 a hodnotu 10, na proměnnou s hodnotou 5
+	//	a adresou 500 však už není odkaz - je z ní nyní garbage, který zůstane v paměti a může dojít k jejímu přeplnění, měli bychom tedy použít
+	//	delete p; . Ukazateli, který ukazuje do prázdné paměti haldy, se říká dangling pointer (visící ukazatel)
+	delete p;
+	p = NULL;
+	p = new int(10);
+	cout << "Adresa: " << p << ", Hodnota: " << *p << endl;
+	//delete p;
+	//p = NULL;
+	cout << "Adresa: " << p << endl;
+	// adresa přiřazena
 }
